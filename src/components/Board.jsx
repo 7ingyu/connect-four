@@ -6,8 +6,8 @@ export default function Board (
   { board, setBoard, frozen, setFrozen, score, setScore }
 ) {
 
-  const [ lastStart, setLastStart ] = useState(1)
-  const [ turn, setTurn ] = useState(1)
+  const [ lastStart, setLastStart ] = useState(0)
+  const [ turn, setTurn ] = useState(0)
   const [ msg, setMsg ] = useState('')
 
   useEffect(() => {
@@ -19,6 +19,7 @@ export default function Board (
     const newStarter = lastStart === 1 ? 2 : 1
     setLastStart(newStarter)
     setTurn(newStarter)
+    setMsg(`Player ${newStarter}'s turn.`)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [frozen])
 
