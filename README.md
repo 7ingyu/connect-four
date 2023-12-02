@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Connect Four
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+See deployment at: [https://7ingyu.github.io/connect-four](https://7ingyu.github.io/connect-four)
 
 ## Available Scripts
 
