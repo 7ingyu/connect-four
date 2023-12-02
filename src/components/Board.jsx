@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import getWinner from '../utils/detectWin';
-
 import Cell from './Cell'
 
 export default function Board (
@@ -56,10 +55,10 @@ export default function Board (
 
   return (
     <>
-      <div className="msg">{msg}</div>
+      <div className={`msg${frozen && turn ? turn === 2 ? ' red' : turn === 1 ? ' yellow' : '' : ''}`}>{msg}</div>
       <div className="gameboard">
         {board.map((row, r) => (
-          <div className="row" key={`row-${r}`}>
+          <div className={`row ${turn === 1 ? 'red' : turn === 2 ? 'yellow' : ''}`} key={`row-${r}`}>
             {row.map((cell, c) =>
               <Cell
                 key={`cell-${r}-${c}`}

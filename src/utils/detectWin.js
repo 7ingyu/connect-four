@@ -1,6 +1,6 @@
 export default function detectWin (board) {
   // horizontals
-  console.log('checking horizontals')
+  // console.log('checking horizontals')
   for (let r = 0; r < board.length; r++) {
       let count = 0
       let player = 0
@@ -20,7 +20,7 @@ export default function detectWin (board) {
     }
 
   // verticals
-  console.log('checking verticals')
+  // console.log('checking verticals')
     for (let c = 0; c < board[0].length; c++) {
       let count = 0
       let player = 0
@@ -39,7 +39,7 @@ export default function detectWin (board) {
     }
 
   // diagonals
-  console.log('checking diagonals')
+  // console.log('checking diagonals')
   let startRow = 0
   while (startRow < 4) {
     let count = 0

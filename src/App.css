@@ -34,6 +34,7 @@ table, td, th {
   position: relative;
   background-color: blue;
   margin-bottom: 0.25rem;
+  border-radius: 0.25rem;
 }
 
 .gamecell > button {
@@ -47,18 +48,36 @@ table, td, th {
   border: none;
 }
 
-.gamecell > button:hover {
-  background-color: palegoldenrod;
+.row.red > .gamecell > button:hover:not([disabled]) {
+  background-color: rgb(255, 197, 197);
+}
+
+.row.yellow > .gamecell > button:hover:not([disabled]) {
+  background-color: rgb(255, 255, 205);
 }
 
 .gamecell > button.yellow {
-  background-color: yellow;
+  background-color: rgb(255, 255, 130);
 }
 
 .gamecell > button.red {
-  background-color: red;
+  background-color: rgb(255, 106, 106);
 }
 
 .msg {
   margin-bottom: 0.5rem;
+  background-color: blue;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 0.25rem;
+}
+
+.msg.red {
+  font-weight: bold;
+  color: rgb(255, 106, 106);
+}
+
+.msg.yellow {
+  font-weight: bold;
+  color: yellow;
 }
