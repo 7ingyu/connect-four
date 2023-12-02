@@ -1,4 +1,4 @@
-export default function Score () {
+export default function Score ({ score: { player1, player2 }}) {
 
   return (
     <table className="scoreboard">
@@ -16,10 +16,10 @@ export default function Score () {
           <td>Losses</td>
         </tr>
         <tr>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
+          <td>{player1.wins}</td>
+          <td>{player1.losses}</td>
+          <td>{player2.wins}</td>
+          <td>{player2.losses}</td>
         </tr>
       </tbody>
     </table>

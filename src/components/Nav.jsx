@@ -1,4 +1,4 @@
-export default function Nav () {
+export default function Nav ({ reset }) {
 
   return (
     <div className="navbar">
@@ -6,7 +6,7 @@ export default function Nav () {
         <h1>Connect Four</h1>
       </div>
       <div className="">
-        <button>Reset Game</button>
+        <button onClick={reset}>Reset Game</button>
       </div>
     </div>
   )
