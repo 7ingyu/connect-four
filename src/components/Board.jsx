@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import getWinner from '../utils/detectWin';
 
 import Cell from './Cell'
 
-export default function Board ({ board, setBoard, frozen }) {
+export default function Board (
+  { board, setBoard, frozen, setFrozen, score, setScore }
+) {
 
   const [ lastStart, setLastStart ] = useState(1)
   const [ turn, setTurn ] = useState(1)
@@ -22,8 +25,17 @@ export default function Board ({ board, setBoard, frozen }) {
 
   useEffect(() => {
     // checkBoard for win
-
-
+    const winner = getWinner(board)
+    if (winner) {
+      const loser = winner === 1 ? 2 : 1
+      let newScore = {...score}
+      score[winner].wins += 1
+      score[loser].losses += 1
+      setMsg(`Player ${winner} wins!`)
+      setScore({...newScore})
+      setFrozen(true)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [board])
 
   const handleClick = (col) => {

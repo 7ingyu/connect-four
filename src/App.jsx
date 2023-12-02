@@ -16,11 +16,11 @@ function App() {
   ]
 
   const [ score, setScore ] = useState({
-    player1: {
+    "1": {
       wins: 0,
       losses: 0
     },
-    player2: {
+    "2": {
       wins: 0,
       losses: 0
     }
@@ -44,6 +44,8 @@ function App() {
           board={board}
           setBoard={setBoard}
           frozen={frozen}
+          setFrozen={setFrozen}
+          score={score}
           setScore={setScore}
         />
       </main>
